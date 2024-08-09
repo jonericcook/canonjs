@@ -2,23 +2,14 @@
   "name": "canonjs",
   "version": "0.1.0",
   "description": "Javascript wrapper around Canon's CCAPI (Camera Control API)",
-  "main": "dist/canonjs.cjs.js",
-  "module": "dist/canonjs.esm.js",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/canonjs.esm.js",
-      "require": "./dist/canonjs.cjs.js",
-      "types": "./dist/index.d.ts"
-    }
-  },
   "files": [
     "dist"
   ],
-  "type": "module",
   "scripts": {
-    "build": "rollup -c",
-    "type-check": "tsc --noEmit"
+    "build": "tsup"
   },
   "author": "Jon-Eric Cook",
   "license": "MIT",
@@ -27,15 +18,16 @@
   },
   "keywords": [
     "canon",
+    "camera",
+    "api",
     "ccapi",
+    "camera control api",
+    "typescript",
     "javascript"
   ],
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^26.0.1",
-    "@rollup/plugin-node-resolve": "^15.2.3",
-    "@rollup/plugin-typescript": "^11.1.6",
-    "rollup": "^4.20.0",
-    "tslib": "^2.6.3",
+    "@types/node": "^22.1.0",
+    "tsup": "^8.2.4",
     "typescript": "^5.5.4"
   }
 }
